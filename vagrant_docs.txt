@@ -1,0 +1,2 @@
+Array of Hashes in multimachine Vagrant boxes
+https://stackoverflow.com/questions/23888381/how-to-run-several-boxes-with-vagrant
