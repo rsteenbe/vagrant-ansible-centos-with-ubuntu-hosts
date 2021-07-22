@@ -4,3 +4,5 @@
 # servers
 host1 ansible_host=192.168.100.11 ansible_ssh_pass=vagrant ansible_user=vagrant
 host2 ansible_host=192.168.100.12 ansible_ssh_pass=vagrant ansible_user=vagrant
+host3 ansible_host=192.168.100.13 ansible_ssh_pass=vagrant ansible_user=vagrant
+host4 ansible_host=192.168.100.14 ansible_ssh_pass=vagrant ansible_user=vagrant

@@ -4,21 +4,32 @@ servers=[
     :ip => "192.168.100.11",
     :box => "bento/ubuntu-20.04",
     :ram => 2048,
-    :cpu => 2
+    :cpu => 2,
+	:port => 81
   },
   {
     :hostname => "host2",
     :ip => "192.168.100.12",
     :box => "bento/ubuntu-20.04",
     :ram => 2048,
-    :cpu => 2
+    :cpu => 2,
+	:port => 82
   },
   {
     :hostname => "host3",
     :ip => "192.168.100.13",
     :box => "bento/ubuntu-20.04",
     :ram => 2048,
-    :cpu => 2
+    :cpu => 2,
+	:port => 83
+  },
+  {
+    :hostname => "host4",
+    :ip => "192.168.100.14",
+    :box => "bento/ubuntu-20.04",
+    :ram => 2048,
+    :cpu => 2,
+	:port => 84
   }
 ]
 
@@ -46,6 +57,7 @@ Vagrant.configure(2) do |config|
 
     servers.each do |machine|
         config.vm.define machine[:hostname] do |node|
+		    node.vm.network "forwarded_port", guest: 80, host: machine[:port] 
             node.vm.box = machine[:box]
             node.vm.hostname = machine[:hostname]
             node.vm.network "private_network", ip: machine[:ip]
